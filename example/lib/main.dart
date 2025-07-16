@@ -120,7 +120,8 @@ class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizationService =
-        RuntimeLocalizationScope.of<SomeRuntimeLocalization>(context);
+        RuntimeLocalizationScope.of<SomeRuntimeLocalization>(context)
+            as FileRuntimeLocalizationService<SomeRuntimeLocalization>;
     final localizations = context.localizations;
 
     return SafeArea(

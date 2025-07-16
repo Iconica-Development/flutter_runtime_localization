@@ -117,7 +117,7 @@ class _DefaultDetail extends StatelessWidget {
 
 class _RuntimeLocalizationEditorState<T extends RuntimeLocalizationBase>
     extends State<RuntimeLocalizationEditor<T>> {
-  late FileRuntimeLocalizationService<T> service;
+  late RuntimeLocalizationServiceInterface<T> service;
   final _formKey = GlobalKey<FormState>();
   Map<String, dynamic> stateMap = {};
 

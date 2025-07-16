@@ -4,16 +4,16 @@ import "package:flutter_runtime_localization/flutter_runtime_localization/servic
 
 /// Allows access to the service from the context.
 class RuntimeLocalizationScope<T extends RuntimeLocalizationBase>
-    extends InheritedNotifier<FileRuntimeLocalizationService<T>> {
+    extends InheritedNotifier<RuntimeLocalizationServiceInterface<T>> {
   /// [RuntimeLocalizationScope] constructor.
   const RuntimeLocalizationScope({
-    required FileRuntimeLocalizationService<T> service,
+    required RuntimeLocalizationServiceInterface<T> service,
     required super.child,
     super.key,
   }) : super(notifier: service);
 
-  /// Maybe receive a [FileRuntimeLocalizationService]
-  static FileRuntimeLocalizationService<T>?
+  /// Maybe receive a [RuntimeLocalizationServiceInterface]
+  static RuntimeLocalizationServiceInterface<T>?
       maybeOf<T extends RuntimeLocalizationBase>(
     BuildContext context,
   ) =>
@@ -21,8 +21,8 @@ class RuntimeLocalizationScope<T extends RuntimeLocalizationBase>
               .dependOnInheritedWidgetOfExactType<RuntimeLocalizationScope<T>>()
               ?.notifier;
 
-  /// Receive a [FileRuntimeLocalizationService] or error.
-  static FileRuntimeLocalizationService<T>
+  /// Receive a [RuntimeLocalizationServiceInterface] or error.
+  static RuntimeLocalizationServiceInterface<T>
       of<T extends RuntimeLocalizationBase>(
     BuildContext context,
   ) =>

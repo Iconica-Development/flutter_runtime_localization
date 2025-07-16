@@ -1,5 +1,4 @@
-import "dart:ui";
-
+import "package:flutter/material.dart";
 import "package:flutter_runtime_localization/flutter_runtime_localization/delegate.dart";
 import "package:flutter_runtime_localization/flutter_runtime_localization/model/runtime_localization.dart";
 
@@ -7,7 +6,8 @@ import "package:flutter_runtime_localization/flutter_runtime_localization/model/
 class UninitializedRuntimeLocalizationException implements Exception {}
 
 /// An abstract interface for managing runtime localizations of type [T].
-class RuntimeLocalizationServiceInterface<T extends RuntimeLocalizationBase> {
+abstract class RuntimeLocalizationServiceInterface<
+    T extends RuntimeLocalizationBase> extends ChangeNotifier {
   /// Function for serializing a [RuntimeLocalizationBase] object into a map.
   Map<String, dynamic> Function(T object) get serializer =>
       throw UnimplementedError();

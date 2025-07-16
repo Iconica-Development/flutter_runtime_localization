@@ -29,7 +29,7 @@ class LoadingLocalizationFromFileFailedException implements Exception {
 
 ///
 class FileRuntimeLocalizationService<T extends RuntimeLocalizationBase>
-    extends ChangeNotifier implements RuntimeLocalizationServiceInterface<T> {
+    extends RuntimeLocalizationServiceInterface<T> {
   /// [FileRuntimeLocalizationService] constructor
   FileRuntimeLocalizationService({
     required Directory directory,
